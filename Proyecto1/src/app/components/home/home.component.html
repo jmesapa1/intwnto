@@ -1,0 +1,31 @@
+
+
+      <div class="container-fluid">
+            <div class="row" >
+               <div class="col-md-12">
+                  <div class="btn-group btn-group-lg" role="group" >
+                        <button class="btn btn-secondary" type="button" value="{{ruta.$key}}"   (click)="myFunction(boton)" #boton *ngFor="let ruta of ListaDeRutas">
+                              {{ruta.$key}}
+
+                        </button> 
+                    
+                     
+                  </div>
+                  <div class="jumbotron">
+                              <agm-map [latitude]="lat" [longitude]="lng">
+                                    <div *ngFor ="let puntos of markers">
+                        
+                                          <agm-marker [latitude]="puntos.lat" [longitude]="puntos.lon" ></agm-marker>
+                                      
+                                    </div>
+                                          
+                              </agm-map>
+                              <h2>Hora Inicial: {{horaInicial}}</h2>
+                              <h2>Hora Final: {{horaFinal}}</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      
+                
+      
